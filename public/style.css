@@ -1,0 +1,48 @@
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+    height: 100%;
+    width: 70%;
+    margin-right: 15px;
+}
+
+#panel {
+    display: block;
+    width: 30%;
+    height: 100%;
+    overflow: auto;
+}
+
+.card {
+    overflow: auto;
+}
+
+#search {
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#find-locations {
+    visibility: hidden;
+}
+
+#number {
+    visibility: hidden;
+}
+
+.map-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}

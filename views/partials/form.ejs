@@ -1,0 +1,174 @@
+<div class="container">
+  <div class="py-5 text-center">
+    <div id="logo"></div>
+    <h2 id="company" class="my-4 pt-2"></h2>
+    <p class="lead">Please fill in the form below to complete checkout. You will be prompted to select pickup and delivery options on the next screen.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-4-5">
+        <span class="text-muted"><strong>Your cart</strong></span>
+        <span class="badge badge-primary badge-pill">1</span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Medium Succulent</h6>
+            <small class="text-muted">A desk plant for Google Maps developers.</small>
+          </div>
+          <span class="text-muted">$12</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between bg-light">
+          <div class="text-success">
+            <h6 class="my-0">Promo code</h6>
+            <small>BUYMAPS</small>
+          </div>
+          <span class="text-success">-$5</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total (USD)</span>
+          <strong>$7</strong>
+        </li>
+      </ul>
+
+      <form class="card p-2">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Promo code" autocomplete="off">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-primary btn-md my-0 ml-0">Redeem</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3"><strong>Billing address</strong></h4>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="md-form md-outline my-2">
+              <input type="text" id="firstName" name="firstName" class="form-control" autocomplete="off" placeholder="First Name" required>
+              <label for="firstName">First name</label>
+            </div>
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="md-form md-outline my-2">
+              <input type="text" id="lastName" class="form-control" autocomplete="off" placeholder="Last Name" required>
+              <label for="lastName">Last name</label>
+            </div>
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mb-3">
+            <div class="md-form md-outline my-2">
+              <input type="email" id="email" name="email" class="form-control" placeholder="Email" autocomplete="off">
+              <label for="email">Email (Optional)</label>
+            </div>
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <div class="md-form md-outline my-2">
+              <input type="text" id="address" class="form-control" name="address" autocomplete="off" required>
+              <label for="address">Address</label>
+            </div>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+
+        </div>
+
+        
+        <hr class="mb-4">
+        <div class="form-check pl-0">
+          <input type="checkbox" class="form-check-input filled-in" id="same-address">
+          <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+        </div>
+        <div class="form-check pl-0">
+          <input type="checkbox" class="form-check-input filled-in" id="save-info">
+          <label class="form-check-label" for="save-info">Save this information for next time</label>
+        </div>
+
+        <hr class="mb-4">
+
+        <h4 class="mb-3"><strong>Payment</strong></h4>
+
+        <div class="d-block my-3">
+          <div class="form-check pl-0">
+            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked>
+            <label class="form-check-label" for="credit">Credit card</label>
+          </div>
+          <div class="form-check pl-0">
+            <input id="debit" name="paymentMethod" type="radio" class="form-check-input">
+            <label class="form-check-label" for="debit">Debit card</label>
+          </div>
+          <div class="form-check pl-0">
+            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input">
+            <label class="form-check-label" for="paypal">PayPal</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-2">
+            <div class="md-form md-outline my-2">
+              <input type="text" id="cc-name" name="name" class="form-control" placeholder="Full Name" required>
+              <label for="cc-name">Name on card</label><br>
+            </div>
+            <div class="invalid-feedback">
+              Name on card is required
+            </div>
+          </div>
+          <div class="col-md-8 mb-2">
+            <div class="md-form md-outline my-2">
+              <input type="text" id="cc-number" name="cc-number" class="form-control" required
+              placeholder="e.g. 4348 4673 6171 5265">
+              <label for="cc-number">Credit card number</label>
+            </div>
+            <div class="invalid-feedback">
+              Credit card number is required
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-2">
+            <div class="md-form md-outline my-2">
+              <input type="text" id="cc-expiration" name="expiration" class="form-control" placeholder="MM/YY" required>
+              <label for="cc-expiration">Expiration</label>
+            </div>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+          <div class="col-md-4 mb-2">
+            <div class="md-form md-outline my-2">
+              <input type="text" id="cc-cvv" name="cvv" class="form-control" placeholder="e.g. 244" required>
+              <label for="cc-cvv">CVV</label>
+            </div>
+            <div class="invalid-feedback">
+              Security code required
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+    </div>
+
+  </div>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <div id="company-copyright"></div>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>

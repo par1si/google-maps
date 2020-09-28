@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Demo</title>
+    <script src="main.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPJnefcLt5mUxgpacnYNqteXJtsRwbYGA&libraries=places&callback=initMap"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="icon" href="./gps.png">
+    
+</head>
+<body>
+    
+    <%- include('partials/nav') %>
+
+    <!-- Jumbotron Container -->
+    <div style="margin-top: 5%"></div>
+    <div class="container">
+        <div style="margin-top: 15px;"></div>
+        <div class="jumbotron">
+            <div id="title"></div>
+            <p class="lead">Use the embedded map, below, to find a nearby store to pick up your online order.</p>
+            <hr class="my-4">
+            <p>Once you've found a nearby store, send the location to your phone!</p>
+            <a class="btn btn-primary btn-lg" role="button" id="start">Click to start.</a>
+            <script>
+                document.getElementById('start').addEventListener('click', function() {
+                    document.getElementById('search').focus();
+                    document.getElementById('panel').scrollIntoView();
+                });
+            </script>
+          </div>
+    </div>
+
+    <!-- Map Container -->
+    <div class="map-container">
+        <div id="panel">
+            <div class="card" style="background-color: #e9ecef; height:100%; margin-left: 15px; margin-right: 15px; border: none;">
+                <div class="card-body">
+                    <div class="input-group mb-3" id="search-div">
+                        
+                    </div>
+                    <a class="btn btn-primary" style="width: 12rem; margin-left: 10px;" id="find-locations">Find nearby locations.</a>
+                    <div class="card-body" style="margin-top: 15px;">
+                        <p class="lead" id="directions" style="font-size:1rem;"></p>    
+                    </div>
+                    <form action="/sms" method="POST">
+                        <a class="btn btn-primary" style="width: 12rem; margin-left: 10px; visibility: hidden;" id="text-me">Text me directions!</a>
+                        <div style="margin-top: 5%; margin-left: 10px; margin-right: 15px; margin-bottom: 5%;">
+                            <input type="text" class="form-control" maxlength="16" name="number" placeholder="Enter your cell phone number here..." id="number" autocomplete="off">
+                            <input type="text" name="address" style="visibility: hidden; height: 0px;" id="address">
+                            <input type="text" name="location" style="visibility: hidden; height: 0px;" id="location">
+                            <input type="text" name="company" style="visibility: hidden; height: 0px;" id="company-input">
+                        </div>
+                        <input type="submit" class="btn btn-primary" style="visibility: hidden; margin-left: 10px; margin-top: -60px;" 
+                        data-toggle="modal" data-target="#exampleModal" id="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body" id="success-alert">
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="map" style="border-radius: 5px;"></div>
+    </div>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- Phone Number formatting script -->
+    <script src="phoneNumber.js"></script>
+</body>
+</html>
